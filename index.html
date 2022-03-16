@@ -9,7 +9,7 @@
     <meta name="author" content="TemplateMo">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>Investors relation</title>
+    <title>Investors' relation</title>
 <!--
 
 Lava Landing Page
@@ -54,7 +54,7 @@ https://templatemo.com/tm-540-lava-landing-page
                             
                             </li>
                             <li class="submenu">
-                                <a href="">Investor News</a>
+                                <a href="">Investors' News</a>
                                 <ul>
                                     <li><a href="login.html" class="menu-item">Signup/Login</a></li>
                                    
@@ -83,7 +83,7 @@ https://templatemo.com/tm-540-lava-landing-page
                 <div class="row">
                     <div class="left-text col-lg-6 col-md-6 col-sm-12 col-xs-12"
                         data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                        <h1>Welcome to Investors<em> News</em></h1>
+                        <h1>Welcome to Investors'<em> News</em></h1>
                         <p style="font-weight: bold;">
                            "Fastest and affordable method of sending and receiving money, paying invoice and getting Paid at any time!"</p> 
                         <a href="#about" class="main-button-slider" > Read News</a>
@@ -105,7 +105,7 @@ https://templatemo.com/tm-540-lava-landing-page
         
             <div class="container ">
                 
-                    <h2 style="font-weight:4rem;text-align:center" >News and Happening</h2><br><br>
+                    <h1 style="font-size:3rem;text-align:center" >News and Happening</h1><br><br>
                     
                     
                     <!-- ***** News section ***** -->
@@ -216,6 +216,7 @@ https://templatemo.com/tm-540-lava-landing-page
     <script src="assets/js/bootstrap.min.js"></script>
 
     <!-- Plugins -->
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
     <script src= "assets/js/main.js"></script>
     <script src="assets/js/owl-carousel.js"></script>
     <script src="assets/js/scrollreveal.min.js"></script>
@@ -260,12 +261,14 @@ axios(config)
 
       $('.newspost').append( `<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                          <div class="features-item">
+                            <p style="text-align:left;text-align: left;text-align: left;">${moment(k.created_at).format('Do MMMM  YYYY')}</p><br>
                              <div class="features-icon">
                                  
                                  <img src="https://res.cloudinary.com/pilstech/image/upload/v1603726392/pay_sprint_black_horizotal_fwqo6q.png" alt="logo"/>
                                  <h4>${k.title}</h4>
                                  <p>${k.description}</p>
                                  <a href="#" class="main-button" onClick="readmore(${k.id})">Read More</a>
+                                 
                              </div>
                          </div>
                      </div>`
@@ -333,8 +336,6 @@ axios(config)
   console.log(error);
 });
 
-    </script>
-   
-
+</script>
 </body>
 </html>

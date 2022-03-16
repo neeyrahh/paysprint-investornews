@@ -32,6 +32,11 @@ function postInvestor(){
     swal('Great!', response.data.message, 'success');
   
      $('.form-control').val('')
+     setTimeout(() => {
+      window.location.href = 'login.html';
+      
+      
+    }, 2000);
    })
   .catch(function (error) {
     $('.spinner').addClass('disp-0');
@@ -84,7 +89,12 @@ function loginInvestor() {
     localStorage.setItem("apiToken",response.data.apiToken)
     
     swal('Great!', response.data.message, 'success');
-    window.location= `/readmore.html?id=${getUrlParameter("id")}`
+    setTimeout(() => {
+    window.location.href =`/investorsopportunity.html`
+    
+    
+  }, 2000);
+    
   })
   .catch(function (error) {
     $('.spinner').addClass('disp-0');
@@ -197,14 +207,7 @@ function checkPw() {
 
 function readmore(id){
   
- if ( localStorage.getItem("apiToken")) {
-   window.location = `/readmore.html?id=${id}`;
- }
- else{
-  
-  window.location = `/login.html?id=${id}`;
-  
- }
+  window.location = `/readmore.html?id=${id}`;
 }
 
 function getUrlParameter(sParam) {
@@ -222,4 +225,8 @@ function getUrlParameter(sParam) {
   }
   return false;
 };
+
+function expressInterest(){
+  
+}
 

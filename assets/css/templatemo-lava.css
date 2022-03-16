@@ -679,7 +679,7 @@ welcome
 .welcome-area .header-text .left-text {
   position: relative;
   align-self: center;
-  margin-top: 35%;
+  margin-top: 25%;
   transform: perspective(1px) translateY(-30%) !important;
 }
 
@@ -760,7 +760,7 @@ about
 */
 
 #about {
-  padding: 100px 0px;
+  padding: px 0px;
   position: relative;
   z-index: 9;
 }
@@ -945,4 +945,15 @@ h2{
   margin-left: 0;
   margin-right: 0;
   font-weight: bold; */
+}
+.center-text {
+  text-align: center;
+}
+
+a.center-text {
+  display: block;
+}
+.invLabel{
+  font-weight: 700;
+  color: darkorange;
 }
