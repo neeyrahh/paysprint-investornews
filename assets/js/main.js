@@ -16,7 +16,7 @@ function postInvestor(){
 
  var config = {
     method: 'post',
-    url: 'https://paysprint.ca/api/v1/investordetails',
+    url: 'http://127.0.0.1:8000/api/v1/investordetails',
     headers: { 
       'Authorization': 'Bearer base64:JFM+PJaWD/pBypX+NhXudDrAmianZdGYZ41qz4WhXL0='
     },
@@ -66,7 +66,7 @@ function loginInvestor() {
   
   var config = {
     method: 'post',
-    url: 'https://paysprint.ca/api/v1/investorlogin',
+    url: 'http://127.0.0.1:8000/api/v1/investorlogin',
     headers: { 
       'Authorization': 'Bearer base64:JFM+PJaWD/pBypX+NhXudDrAmianZdGYZ41qz4WhXL0=', 
       
@@ -81,8 +81,7 @@ function loginInvestor() {
   
   axios(config)
   .then(function (response) {
-    
-    // console.log(response)
+  
    
     $('.spinner').addClass('disp-0');
     $('.submitbtn').removeClass('disp-0');
@@ -153,14 +152,9 @@ const loadPage = (page) =>{
            
   
       });
-  
-   
-  
-     
-  
     }
     else{
-      
+    
       $('.newspost').append( `<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                            <div class="features-item">
                                <div class="features-icon">
@@ -175,7 +169,6 @@ const loadPage = (page) =>{
       )
       }
   
-        
   })
   .catch(function (error) {
     console.log(error);
@@ -226,7 +219,21 @@ function getUrlParameter(sParam) {
   return false;
 };
 
-function expressInterest(){
-  
+async function expressInterest(postId, apiToken){
+
+  const config = {
+    method: 'get',
+    url: `https://paysprint.ca/api/v1/investor/express-interest?postId=${postId}&apiToken=${apiToken}`,
+    headers: {
+        'Authorization': 'Bearer base64:JFM+PJaWD/pBypX+NhXudDrAmianZdGYZ41qz4WhXL0=',
+
+    }
+}
+
+const result = await axios(config)
+
+
+return result;
+ 
 }
 

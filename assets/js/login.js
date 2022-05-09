@@ -26,6 +26,8 @@ function loginInv(){
     $('.spinner').addClass('disp-0');
     $('.submitbtn').removeClass('disp-0');
 
+    // console.log(response);
+
     swal('Great!', response.data.message, 'success');
   })
   .catch(function (error) {
