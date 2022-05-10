@@ -16,7 +16,7 @@ function postInvestor(){
 
  var config = {
     method: 'post',
-    url: 'http://127.0.0.1:8000/api/v1/investordetails',
+    url: 'https://paysprint.ca/api/v1/investordetails',
     headers: { 
       'Authorization': 'Bearer base64:JFM+PJaWD/pBypX+NhXudDrAmianZdGYZ41qz4WhXL0='
     },
