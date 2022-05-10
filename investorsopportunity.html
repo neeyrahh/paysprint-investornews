@@ -411,8 +411,12 @@ https://templatemo.com/tm-540-lava-landing-page
                             </aside></div></div>`)
 
                  })
+                 
                 
             }
+            else{
+   $('.blog_posted').append(`<div class="mx-auto col-md-6"><div class="card h-100"><div class="card-body"><h5 class="card-header">Not Found!</h5><p class="card-text">Oops!, Investor opportunity not available yet.</p></div></div>`);
+   }
 
         })
         .catch(function (error) {
