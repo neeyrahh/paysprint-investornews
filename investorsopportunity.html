@@ -38,6 +38,7 @@ https://templatemo.com/tm-540-lava-landing-page
         <div class="jumper">
             <div></div>
             <div></div>
+           
             <div></div>
         </div>
     </div>
@@ -69,7 +70,8 @@ https://templatemo.com/tm-540-lava-landing-page
                             <li class="submenu">
                                 <a href="">Investor News</a>
                                 <ul>
-                                    <li><a href="login.html" class="menu-item">Signup/Login</a></li>
+                                    <li><a href="#" class="menu-item" onclick="logOut()">Log Out</a></li>
+                                  
 
                                 </ul>
                             </li>
@@ -154,8 +156,8 @@ https://templatemo.com/tm-540-lava-landing-page
 
                     </div>
 
-                        <div class="blog_posted">
-
+                        <div class ="blog_posted">
+                         
 
                         </div>
 
@@ -270,27 +272,27 @@ https://templatemo.com/tm-540-lava-landing-page
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <!-- jQuery -->
-    <!-- <script src="assets/js/jquery-2.1.0.min.js"></script> -->
 
-    <!-- Bootstrap -->
-    <!-- <script src="assets/js/popper.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script> -->
-
-    <!-- Plugins -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/scrollreveal.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/imgfix.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-    <!-- Global Init -->
-    <script src="assets/js/custom.js"></script>
+        <!-- jQuery -->
+        <script src="assets/js/jquery-2.1.0.min.js"></script>
+    
+        <!-- Bootstrap -->
+        <script src="assets/js/popper.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+    
+        <!-- Plugins -->
+        <script src= "assets/js/login.js"></script>
+        <script src= "assets/js/main.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="assets/js/owl-carousel.js"></script>
+        <script src="assets/js/scrollreveal.min.js"></script>
+        <script src="assets/js/waypoints.min.js"></script>
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <script src="assets/js/imgfix.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+        <!-- Global Init -->
+        <script src="assets/js/custom.js"></script>
 
 </body>
 
@@ -300,8 +302,10 @@ https://templatemo.com/tm-540-lava-landing-page
 
 
     var data = new FormData();
-    data.append('button', 'on');
 
+    // console.log(data);
+    data.append('button', 'on');
+  
     var config = {
         method: 'get',
         url: 'https://paysprint.ca/api/v1/investor/activatedposts',
@@ -311,26 +315,25 @@ https://templatemo.com/tm-540-lava-landing-page
         },
         data: data
     };
-
+  
+  
+     
     axios(config)
         .then(function (response) {
             var datas = response.data.data;
 
-
+           
 
             var html = "";
 
             if (datas.length > 0) {
                 $.each(datas, async function (key, value) {
-
+                //  alert(1234)
 
                     var myInterest = await checkInterest(value.id);
                     
                     
-
-                
-
-                    // html += 
+                //   html += 
                     $(".blog_posted").append(
                         `<div class="row"><div class="blog_left_sidebar col-md-8"><article class="blog_item">
                             <div class="blog_details">
@@ -432,10 +435,16 @@ async function checkInterest(postId){
             'Authorization': 'Bearer base64:JFM+PJaWD/pBypX+NhXudDrAmianZdGYZ41qz4WhXL0=',
 
         }
+
+        
     }
+    
 
     const result = await axios(config);
-
+    // console.log(result);
     return result;
+
+
+  
 }
 </script>
