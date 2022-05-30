@@ -324,6 +324,8 @@ https://templatemo.com/tm-540-lava-landing-page
 
            
 
+           
+
             var html = "";
 
             if (datas.length > 0) {
@@ -331,7 +333,31 @@ https://templatemo.com/tm-540-lava-landing-page
                 //  alert(1234)
 
                     var myInterest = await checkInterest(value.id);
-                    
+                    var show;
+
+                    // Do if statetment to check interest is not null,
+
+                    // If not null, pass the button to a variable checking the message availability
+
+                    // Else Remove the express interest button
+
+
+
+                    if(myInterest.data.data != []){
+                      show = `<button type="button" id="btn${value.id}"
+                                            class=" btn btn-secondary btn-block" ${myInterest.data.message == 'Available' ? 'disabled' : ''} onclick="expressInterest(${value.id}, '${localStorage.apiToken}')"> Click to Express Interest (EOI)
+                                        </button>  <small style="color: red; font-weight:bold">(Investment documents would
+                                            be available to download once you click this button)</small>`;
+
+                    }
+                    else
+                    {
+
+                       show = '';
+                    };
+
+
+
                     
                 //   html += 
                     $(".blog_posted").append(
@@ -392,12 +418,9 @@ https://templatemo.com/tm-540-lava-landing-page
                                 <hr>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <button type="button" id="btn"
-                                            class=" btn btn-secondary btn-block" ${myInterest.data.message == 'Available' ? 'disabled' : ''} onclick="expressInterest(${value.id}, '${localStorage.apiToken}')"> Click to Express Interest (EOI)
-                                        </button>
-                                        <hr>
-                                        <small style="color: red; font-weight:bold">(Investment documents would
-                                            be available to download once you click this button)</small>
+                                        ${show}
+                                        
+                                       
                                     </div>
                                 </div>
                                 <br>
@@ -428,6 +451,7 @@ https://templatemo.com/tm-540-lava-landing-page
 
 
 async function checkInterest(postId){
+
     const config = {
         method: 'get',
         url: `https://paysprint.ca/api/v1/investor/get-specific?postId=${postId}&apiToken=${localStorage.apiToken}`,

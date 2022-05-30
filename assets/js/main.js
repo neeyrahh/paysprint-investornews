@@ -221,6 +221,8 @@ function getUrlParameter(sParam) {
 
 async function expressInterest(postId, apiToken){
 
+  $('#btn'+postId).text('Please wait...');
+
   const config = {
     method: 'get',
     url: `https://paysprint.ca/api/v1/investor/express-interest?postId=${postId}&apiToken=${apiToken}`,
@@ -230,12 +232,18 @@ async function expressInterest(postId, apiToken){
     }
 }
 
-const result = await axios(config)
+const result = await axios(config);
+
+
+$('#btn'+postId).text('Click to Express Interest (EOI)');
+
 
 
 return result;
  
 }
+
+
 
 function logOut(){
   localStorage.removeItem('email')
@@ -243,3 +251,4 @@ function logOut(){
   window.location.href='index.html'
 }
  
+
