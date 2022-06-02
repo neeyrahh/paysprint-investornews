@@ -1,3 +1,4 @@
+
 function postInvestor(){
 
     var data = new FormData();
@@ -186,6 +187,8 @@ function check() {
     document.getElementById('message').innerHTML = 'not matching';
   }
 }
+
+  
 function checkPw() {
   if (document.getElementById('password-1').value ==
     document.getElementById('password-2').value) {
@@ -196,6 +199,15 @@ function checkPw() {
     document.getElementById('message-2').innerHTML = 'not matching';
   }
 }
+
+
+
+if (grecaptcha.getResponse() == "") {
+  alert('Check the captcha box');
+
+};
+
+
 
 
 function readmore(id){

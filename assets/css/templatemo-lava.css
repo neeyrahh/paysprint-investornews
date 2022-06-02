@@ -639,6 +639,7 @@ header
   .header-area .main-nav .nav li.submenu:hover ul, .header-area .main-nav .nav li.submenu:focus ul {
     height: 0px;
   }
+ 
 }
 
 @media (min-width: 992px) {
@@ -646,6 +647,13 @@ header
     display: flex !important;
   }
 }
+
+@media (min-width:320px){
+  .header-image img {
+    width: 10%;
+    height: 50px
+  }
+ }
 
 
 /* 
@@ -703,6 +711,7 @@ welcome
   color: #7a7a7a;
   line-height: 30px;
   letter-spacing: 0.25px;
+  
   margin-bottom: 40px;
   position: relative;
 }

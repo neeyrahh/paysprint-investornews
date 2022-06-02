@@ -5,8 +5,8 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="TemplateMo">
+    <meta name="Investor Relation" content="Welcome to PaySprint Investor News">
+	<meta name="description" content="Fastest and affordable method of sending and receiving money, paying invoice and getting Paid at any time!">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
     <title>Investors' relation</title>
@@ -26,6 +26,7 @@ https://templatemo.com/tm-540-lava-landing-page
     <link rel="stylesheet" href="assets/css/templatemo-lava.css">
 
     <link rel="stylesheet" href="assets/css/owl-carousel.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
 
@@ -125,87 +126,84 @@ https://templatemo.com/tm-540-lava-landing-page
                         Do you have an account? Login.
                     </a>
                     </div><br>
-                    
-        
-                    
-                   
-                   
-                    <form class="center" method="post" action="https://paysprint.ca/api/v1/investordetails">
+                    <form class="center" method="post" action="" id="signupform">
                       <div class="mb-3">
-                      <label for="exampleInputName" class="form-label">Name <br> <small>FullName</small></label>
+                      <label for="exampleInputName" class="form-label">Name <br> </label>
                         <div class="input-group">
                           <div class="input-group-append"> <span class="input-group-text text-muted">
                               <img src="https://img.icons8.com/material-outlined/24/000000/user--v1.png" /> </span> </div>
-                          <input type="text" name="fullname" id="fullname" class="form-control " required />
+                          <input type="text" name="fullname" id="fullname" class="form-control " placeholder="Full Name" required />
                         </div>
                       </div>
                       <div class="mb-3">
-                        <label for="exampleInputEmail" class="form-label">Email<br> <small>Email</small></label>
+                        <label for="exampleInputEmail" class="form-label">Email<br></label>
                         <div class="input-group">
                           <div class="input-group-append"> <span class="input-group-text text-muted"><img
                                 src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/24/000000/external-email-multimedia-kiranshastry-lineal-kiranshastry-1.png" />
                             </span> </div>
-                          <input type="email" name="email" id="email-1" class="form-control" onkeyup="check()" required />
+                          <input type="email" name="email" id="email-1" class="form-control" placeholder="Email" required />
                         </div>
                       </div>
                       <div class="mb-3">
-                        <label for="exampleInputEmail" class="form-label">Email<br> <small>Confirm Email</small></label>
+                        <label for="exampleInputEmail" class="form-label">Email<br> </label>
                         <div class="input-group">
                           <div class="input-group-append"> <span class="input-group-text text-muted"><img
                                 src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/24/000000/external-email-multimedia-kiranshastry-lineal-kiranshastry-1.png" />
                             </span> </div>
-                          <input type="email" name="email" id="email-2" class="form-control" onkeyup='check();' required />
+                          <input type="email" name="email" id="email-2" class="form-control" onfocusout='check()' placeholder="Confirm Email" required />
                           <span id='message'></span>
                         </div>
                       </div>
                       <div class="mb-3">
-                        <label for="exampleInputPassword" class="form-label">Password<br> <small>Password</small></label>
+                        <label for="exampleInputPassword" class="form-label">Password<br></label>
                         <div class="input-group">
                           <div class="input-group-append"> <span class="input-group-text text-muted">
                             <img src="https://img.icons8.com/material-outlined/24/000000/lock--v1.png"/>
                             </span> </div>
-                          <input type="password" name="password" id="password-1" class="form-control" onkeyup="checkPw()" required />
+                          <input type="password" name="password" id="password-1" class="form-control" placeholder="Password" required />
                         </div>
                       </div>
                       <div class="mb-3">
-                        <label for="exampleInputPassword" class="form-label">Password<br> <small>Confirm Password</small></label>
+                        <label for="exampleInputPassword" class="form-label">Password<br></label>
                         <div class="input-group">
                           <div class="input-group-append"> <span class="input-group-text text-muted">
                             <img src="https://img.icons8.com/material-outlined/24/000000/lock--v1.png"/>
                             </span> </div>
-                          <input type="password" name="password" id="password-2" class="form-control" onkeyup="checkPw()"  required />
+                          <input type="password" name="password" id="password-2" class="form-control" onfocusout="checkPw()" placeholder="Confirm Password" required />
                           <span id='message-2'></span>
                         </div>
                       </div>
               
                       <div class="mb-3">
-                        <label for="exampleInputPhoneNumber" class="form-label">Phone Number<br> <small>Phone Number</small></label>
+                        <label for="exampleInputPhoneNumber" class="form-label">Phone Number<br></label>
                         <div class="input-group">
                           <div class="input-group-append"> <span class="input-group-text text-muted"><img
                                 src="https://img.icons8.com/ios/24/000000/phone.png" /> </span> </div>
-                          <input type="text" name="phonenumber" id="phonenumber" class="form-control" required />
+                          <input type="text" name="phonenumber" id="phonenumber" class="form-control" placeholder="Phone Number" required />
                         </div>
                         <br>
                         <div class="mb-3">
-                          <label for="inputCountry" class="form-label">Country <br><small>Select your country</small></label>
+                          <label for="inputCountry" class="form-label">Country <br></label>
                           
-                          <select id="country" name=" country" class="form-control"></select>
+                          <select id="country" name=" country" class="form-control" ></select>
                           <br />
                         </div>
                         <div class="mb-3">
-                            <label for="inputState" class="form-label">State<br><small>Select your state</small></label>
+                            <label for="inputState" class="form-label">State<br></label>
                             <select name="state" id="state" class="form-control"></select>
                         </div> 
                         <br />
                         <div class="mb-3">
-                              <label for="inputCity" class="form-label">City<br><small>Type your city</small></label></label>
-                              <input type="text" class="form-control" id="city" name="city">
+                              <label for="inputCity" class="form-label">City<br></label></label>
+                              <input type="text" class="form-control" id="city" name="city" placeholder="Input City">
                         </div>
-                            <br />
+                        <br/>
 
-                        <div class="g-recaptcha" data-sitekey="6Lcy420eAAAAAMGTwtjwvGCCD10upLQNcz9_ex-y" >
+                        <div class="g-recaptcha" data-sitekey="6Lcy420eAAAAAMGTwtjwvGCCD10upLQNcz9_ex-y" required>
 
                         </div>
+
+                        <br/>
                         <div class="d-grid gap-2">
                               <button class="btn btn-warning submitbtn first" type="button" id="btn" onclick="postInvestor()">Submit</button>
                               
